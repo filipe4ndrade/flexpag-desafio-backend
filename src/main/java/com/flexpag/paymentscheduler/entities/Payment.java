@@ -23,10 +23,10 @@ public class Payment implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private Double valueOfPayment;
+	
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT")
 	private Instant date;
-	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "HH:mm:ss", timezone = "GMT")
-	private Instant hourOfPayment;
+	
 	@NonNull
 	private PaymentStatus status;
 
@@ -35,10 +35,8 @@ public class Payment implements Serializable {
 	}
 
 	public Payment(Long id, Double valueOfPayment, Instant date) {
-		this.id = id;
 		this.valueOfPayment = valueOfPayment;
 		this.date = date;
-		this.hourOfPayment = this.date;
 		this.status = PaymentStatus.PENDING;
 	}
 }

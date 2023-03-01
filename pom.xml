@@ -9,7 +9,7 @@
     </parent>
     <groupId>com.flexpag</groupId>
     <artifactId>payment-scheduler</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0.0</version>
     <name>payment-scheduler</name>
     <description>Projeto do desafio backend para dev jr flexpag</description>
     <properties>
