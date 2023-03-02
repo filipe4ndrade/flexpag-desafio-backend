@@ -85,7 +85,7 @@ spring:
 ### :notebook: To-do list
 - [X] Fazer o fork do projeto
 - [X] Implementar solução
-- [ ] Enviar link do projeto
+- [x] Enviar link do projeto
 
 :information_source: _Sinta-se livre para incluir quaisquer observações que achar necessário_
 
