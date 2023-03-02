@@ -59,7 +59,7 @@ public class PaymentService {
 		try {
 			Payment p = repository.getReferenceById(id);
 			if (p.getStatus() == PaymentStatus.PENDING) {
-				p.setValue(obj.getValue());
+				p.setValuePayment(obj.getValuePayment());
 				p.setStatus(obj.getStatus());
 				p.setDate(obj.getDate());
 			}
