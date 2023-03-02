@@ -3,8 +3,6 @@ package com.flexpag.paymentscheduler.services;
 import java.util.List;
 import java.util.Optional;
 
-import javax.persistence.EntityNotFoundException;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
@@ -14,6 +12,8 @@ import com.flexpag.paymentscheduler.enums.PaymentStatus;
 import com.flexpag.paymentscheduler.repositories.PaymentRepository;
 import com.flexpag.paymentscheduler.services.exceptions.ResourceForbiddenException;
 import com.flexpag.paymentscheduler.services.exceptions.ResourceNotFoundException;
+
+import jakarta.persistence.EntityNotFoundException;
 
 @Service
 public class PaymentService {
