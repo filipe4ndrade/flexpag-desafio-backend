@@ -2,7 +2,6 @@ package com.flexpag.paymentscheduler.services;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.logging.Logger;
 
 import javax.persistence.EntityNotFoundException;
 
