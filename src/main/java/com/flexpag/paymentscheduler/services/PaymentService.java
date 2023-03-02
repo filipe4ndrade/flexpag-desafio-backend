@@ -34,6 +34,7 @@ public class PaymentService {
 
 	// Cria Novo Pagamento
 	public Payment create(Payment obj) {
+		obj.setStatus(PaymentStatus.PENDING);
 		return repository.save(obj);
 	}
 
@@ -54,13 +55,12 @@ public class PaymentService {
 		}
 	}
 
-	// 2) Editar Status e/ou Data e Hora (e valor)
+	// 2) Editar Data e Hora (e valor)
 	public Payment update(Long id, Payment obj) {
 		try {
 			Payment p = repository.getReferenceById(id);
 			if (p.getStatus() == PaymentStatus.PENDING) {
 				p.setValuePayment(obj.getValuePayment());
-				p.setStatus(obj.getStatus());
 				p.setDate(obj.getDate());
 			}
 			return repository.save(p);
@@ -68,6 +68,17 @@ public class PaymentService {
 			throw new ResourceNotFoundException(id);
 		} catch (EmptyResultDataAccessException e) {
 			throw new ResourceForbiddenException(id);
+		}
+	}
+
+	// 3) Editar Status
+	public Payment updateStatus(Long id) {
+		try {
+			Payment p = repository.getReferenceById(id);
+			p.setStatus(PaymentStatus.PAID);
+			return repository.save(p);
+		} catch (EntityNotFoundException e) {
+			throw new ResourceNotFoundException(id);
 		}
 	}
 

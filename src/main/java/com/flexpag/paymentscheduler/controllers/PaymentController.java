@@ -58,10 +58,16 @@ public class PaymentController {
 		return ResponseEntity.noContent().build();
 	}
 	
-	// 2) Editar Status e/ou Data e Hora (e valor)
+	// 2) Editar Data e Hora (e valor)
 	@PutMapping(value = "/{id}")
 	public ResponseEntity<Payment> updateDateOrHour(@PathVariable Long id, @RequestBody Payment payment){
 		payment = service.update(id, payment);
 		return ResponseEntity.ok().body(payment);
+	}
+	
+	// 3) Editar Status
+	@PutMapping(value = "/status/{id}")
+	public void makeThePayment(@PathVariable Long id){
+		service.updateStatus(id);
 	}
 }
