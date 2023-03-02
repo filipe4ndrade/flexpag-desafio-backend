@@ -1,7 +1,6 @@
 package com.flexpag.paymentscheduler.controllers.exceptions;
 
 import java.io.Serializable;
-import java.time.Instant;
 
 import lombok.Data;
 
