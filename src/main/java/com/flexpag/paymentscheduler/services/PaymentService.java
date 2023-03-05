@@ -75,8 +75,13 @@ public class PaymentService {
 	public Payment updateStatus(Long id) {
 		try {
 			Payment p = repository.getReferenceById(id);
-			p.setStatus(PaymentStatus.PAID);
-			return repository.save(p);
+			if (p.getStatus() == PaymentStatus.PENDING) {
+				p.setStatus(PaymentStatus.PAID);
+				return repository.save(p);
+			} else {
+				p.setStatus(PaymentStatus.PENDING);
+				return repository.save(p);
+			}
 		} catch (EntityNotFoundException e) {
 			throw new ResourceNotFoundException(id);
 		}

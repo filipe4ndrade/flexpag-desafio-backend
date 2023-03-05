@@ -16,4 +16,7 @@ spring:
       hibernate:
         format_sql: true
         show_sql: true
-
+springdoc:
+  pathsToMatch: /api/payments/**
+  swagger-ui:
+    use-root-path: true

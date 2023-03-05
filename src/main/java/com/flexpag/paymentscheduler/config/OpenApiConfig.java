@@ -15,10 +15,12 @@ public class OpenApiConfig {
         return new OpenAPI()
         		.info(new Info()
         				.title("Desafio BackEnd da FlexPag")
-        				.description(" O desafio consiste na implementação de um serviço de pagamento agendando.")
+        				.description(" A Flexpag é uma empresa de tecnologia especializada em soluções digitais de pagamento, "
+        						+ "com atuação nas principais distribuidoras de energia, gás natural, água e saneamento do país."
+        						+ "O desafio backend consiste na implementação de um serviço de pagamento agendando.")
         				.termsOfService("")
         				.license(new License().name("Apache 2.0")
-        						.url("")));
+        						.url("https://www.apache.org/licenses/LICENSE-2.0")));
     }
     
 }
