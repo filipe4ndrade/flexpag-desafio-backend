@@ -23,6 +23,16 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 
 // Acessar a documentação swagger: http://localhost:8080/swagger-ui/index.html
 
+/*
+Como fazer update ou create pelo JSON:
+Deve-se usar apenas dois atributos: valuePayment e date.
+Exemplo:	
+  {
+     "valuePayment": 1500.00,
+     "date": "2023-03-06 08:30:20"
+   }
+*/
+
 @RestController
 @RequestMapping(value = "/api/payments")
 @Tag(name = "Payments", description = "Endpoints for Managing Payments" )
